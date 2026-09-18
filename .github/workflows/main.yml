@@ -22,6 +22,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # 签到任务
   checkin:
